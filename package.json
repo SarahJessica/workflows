@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "description": "a project to learn about setting up workflows (with gulp)",
   "main": "index.js",
-  
   "repository": {
     "type": "git",
     "url": "github.com/SarahJessica/workflows"
   },
-  "author": "Sarah Jessica Leivers"
+  "author": "Sarah Jessica Leivers",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.5"
+  }
 }
