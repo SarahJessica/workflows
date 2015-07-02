@@ -1,14 +1,11 @@
 var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	coffee = require('gulp-coffee'),
+	browserify = require('gulp-browserify'),
 	concat = require('gulp-concat');
 
-var coffeeSrcs = ['components/coffeescript/rclick.coffee'];
-var jsSrcs = [	'components/scripts/*.js', 
-				// 'components/scripts/tagline.js', 
-				// 'components/scripts/template.js',
-				// 'components/scripts/rclick.js'
-			];
+var coffeeSrcs = ['components/coffeescript/*.coffee'];
+var jsSrcs = [	'components/scripts/*.js'];
 
 gulp.task('coffeeConv', function(){
 	gulp.src(coffeeSrcs)
@@ -20,6 +17,7 @@ gulp.task('coffeeConv', function(){
 gulp.task('js', function(){
 	gulp.src(jsSrcs)
 	.pipe(concat('script.js'))
+	.pipe(browserify())
 	.pipe(gulp.dest('builds/development/js'))
 });
 
