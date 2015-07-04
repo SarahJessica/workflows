@@ -33,6 +33,7 @@ gulp.task('compass', function(){
 		.on('error', gutil.log))
 	.pipe(gulp.dest('builds/development/css'))
 });
+gulp.task('default', ['coffeeConv', 'js', 'compass']);
 
 // gulp.task('log', function (){
 // 	gutil.log('this is working');
