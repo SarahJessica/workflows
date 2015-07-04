@@ -33,6 +33,12 @@ gulp.task('compass', function(){
 		.on('error', gutil.log))
 	.pipe(gulp.dest('builds/development/css'))
 });
+
+gulp.task('watch', function(){
+	gulp.watch(coffeeSrcs, ['coffeeConv']);
+	gulp.watch(jsSrcs, ['js']);
+	gulp.watch(sassSrcs, ['compass']);
+});
 gulp.task('default', ['coffeeConv', 'js', 'compass']);
 
 // gulp.task('log', function (){
